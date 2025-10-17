@@ -1,0 +1,330 @@
+/* SOULAT – Brand Styles */
+:root {
+  --primary: #163043;
+  --accent: #83b1c8;
+  --soft-bg: #f5f9fb;
+  --text: #1a1a1a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Open Sans', 'Roboto', sans-serif; color: var(--text); background: #fff; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+.container { width: 92%; max-width: 1100px; margin: 0 auto; }
+
+/* Navbar */
+.navbar { position: sticky; top: 0; z-index: 1000; background: transparent; transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease; padding: 16px 0; }
+.navbar.shrink { background: rgba(22,48,67,0.95); padding: 8px 0; box-shadow: 0 6px 28px rgba(0,0,0,0.12); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 12px; font-family: 'Poppins', 'Lato', 'Inter', sans-serif; font-weight: 700; letter-spacing: 0.8px; color: var(--primary); }
+.navbar.shrink .logo { color: #fff; }
+.logo img { height: 36px; width: auto; border-radius: 4px; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { font-weight: 600; color: var(--primary); padding: 8px 12px; border-radius: 8px; transition: color 0.2s ease, background 0.2s ease; }
+.navbar.shrink .nav-links a { color: #fff; }
+.nav-links a:hover { background: rgba(131,177,200,0.15); color: var(--primary); }
+.btn { display: inline-block; background: var(--primary); color: #fff; padding: 12px 20px; border-radius: 10px; font-weight: 700; transition: background 0.2s ease, transform 0.1s ease; }
+.btn:hover { background: var(--accent); transform: translateY(-1px); }
+.mobile-toggle { display: none; color: var(--primary); font-weight: 700; border: 1px solid var(--primary); padding: 8px 12px; border-radius: 8px; }
+.navbar.shrink .mobile-toggle { color: #163043; border-color: #fff; }
+
+/* Contact page: force visible navbar with brand styling */
+.contact .navbar { background: rgba(22,48,67,0.95); padding: 8px 0; box-shadow: 0 6px 28px rgba(0,0,0,0.12); }
+.contact .logo { color: #fff; }
+.contact .nav-links a { color: #fff; }
+.contact .mobile-toggle { color: #fff; border-color: #fff; }
+
+@media (max-width: 820px) {
+  /* Mobile nav dropdown */
+  .nav-links { display: none; position: absolute; top: 64px; right: 4%; background: #fff; border: 1px solid #e6eef3; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); flex-direction: column; padding: 12px; }
+  .navbar.shrink .nav-links { background: #163043; }
+  .nav-links.open { display: flex; }
+  .mobile-toggle { display: inline-block; }
+
+  /* Make the top bar visible and readable on mobile */
+  .navbar { background: var(--primary); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+  .navbar .logo { color: #fff; }
+  .navbar .mobile-toggle { color: #fff; border-color: #fff; }
+}
+
+/* Center footer on mobile (all pages) */
+@media (max-width: 680px) {
+  .footer .container { text-align: center; }
+}
+
+/* Hero */
+.hero { position: relative; min-height: 100vh; display: grid; place-items: center; color: #fff; background: url('images/Header_Soulat10.png') center/cover no-repeat; }
+.hero-content { position: relative; z-index: 1; text-align: center; padding: 40px 0; }
+.hero h1 { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 36px; letter-spacing: 0.5px; }
+.hero p { margin: 16px auto 24px; max-width: 760px; font-size: 18px; }
+.hero .btn { background: #fff; color: var(--primary); }
+.hero .btn:hover { background: var(--accent); color: #fff; }
+
+/* Sections */
+.section { padding: 72px 0; }
+.section h2 { font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--primary); margin-bottom: 16px; font-size: 30px; }
+.section p { color: #2b3a44; }
+.grid-2 { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; }
+@media (max-width: 980px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 980px) { .card-grid { grid-template-columns: 1fr; } }
+
+.card { background: #fff; border: 1px solid #e6eef3; border-radius: 12px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
+.card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+
+.soft-blue { background: linear-gradient(0deg, rgba(131,177,200,0.12), rgba(131,177,200,0.12)); }
+.soft-blue h2 { color: var(--primary); }
+.soft-blue p { color: #163043; }
+
+.image-frame { border-radius: 12px; overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,0.06); border: 1px solid #e6eef3; }
+
+/* Footer */
+.footer { background: var(--primary); color: #fff; padding: 40px 0; }
+.footer a { color: #fff; }
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+.footer .small { opacity: 0.9; }
+
+/* Contact page */
+.contact-wrap { min-height: 70vh; display: grid; place-items: center; background: var(--soft-bg); padding: 64px 0; }
+.contact-card { width: 92%; max-width: 720px; background: #fff; border: 1px solid #e6eef3; border-radius: 16px; box-shadow: 0 12px 30px rgba(0,0,0,0.06); padding: 32px 28px; }
+.contact-card h1 { font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+.contact-card p.sub { color: #2b3a44; margin-bottom: 20px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-grid .full { grid-column: 1/-1; }
+.label { font-weight: 600; color: var(--primary); margin-bottom: 6px; display: block; }
+.input, .textarea { width: 100%; border: 1px solid #cfe0ea; border-radius: 10px; padding: 12px 14px; font-size: 16px; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.input:focus, .textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(131,177,200,0.25); }
+.textarea { min-height: 120px; resize: vertical; }
+.form-actions { margin-top: 14px; display: flex; gap: 12px; align-items: center; }
+.status { font-weight: 600; color: var(--primary); }
+
+@media (max-width: 680px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* Typewriter effect — no caret */
+.typewriter {
+  padding-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* ✅ Mobile fix for typewriter overflow (allow wrapping to 2 lines) */
+@media (max-width: 600px) {
+  #typewriter {
+    white-space: normal;   /* allow wrapping */
+    display: inline-block;
+    line-height: 1.4;
+    text-align: center;
+    word-break: break-word;
+  }
+}
+
+/* Accented section titles */
+.section h2 { position: relative; display: inline-block; }
+/* Creative cards */
+.card { position: relative; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--accent), transparent); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); }
+.card .icon { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); margin-bottom: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.12); }
+
+/* Enhanced image frames */
+.image-frame { position: relative; }
+.image-frame::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(131,177,200,0.14), rgba(22,48,67,0.1)); pointer-events: none; mix-blend-mode: multiply; }
+
+/* Soft blue section visual */
+.soft-blue { background: linear-gradient(180deg, rgba(131,177,200,0.18), rgba(131,177,200,0.12)); border-top: 1px solid #cfe0ea; border-bottom: 1px solid #cfe0ea; }
+
+/* Dark section variant for About/Solutions */
+.section.dark { background: #163043; border-top: 1px solid #0e2230; border-bottom: 1px solid #0e2230; }
+.section.dark h2 { color: #ffffff; }
+.section.dark p { color: #e6eef3; }
+
+/* Container rhythm adjustments for creative spacing */
+.section .container { padding-top: 4px; }
+
+/* Mission subtitle styling */
+#misjon .subheading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 4px 0 14px;
+  display: inline-block;
+  letter-spacing: 0.4px;
+  position: relative;
+}
+#misjon .subheading::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(131,177,200,0.6);
+}
+
+/* Zoom-in/out breathing animation for mission image */
+@keyframes misjonBreathZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+#misjon .image-frame img {
+  animation: misjonBreathZoom 14s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+#misjon .image-frame {
+  cursor: zoom-in;
+}
+#misjon .image-frame:hover img {
+  animation-play-state: paused;
+  transform: scale(1.08);
+}
+
+/* CSS-only auto slider for About/Solutions */
+#om-oss .auto-slider { position: relative; overflow: hidden; border-radius: 12px; }
+#om-oss .auto-slider { aspect-ratio: 4 / 3; min-height: 260px; }
+#om-oss .auto-slider img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: aboutSliderFade 18s ease-in-out infinite; will-change: opacity, transform; }
+#om-oss .auto-slider img:nth-child(1) { animation-delay: 0s; }
+#om-oss .auto-slider img:nth-child(2) { animation-delay: 6s; }
+#om-oss .auto-slider img:nth-child(3) { animation-delay: 12s; }
+
+@keyframes aboutSliderFade {
+  0%   { opacity: 0; transform: scale(1); }
+  5%   { opacity: 1; }
+  30%  { opacity: 1; transform: scale(1.04); }
+  33%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ========================= */
+/* SOULAT – Mission Section  */
+/* ========================= */
+
+#misjon {
+  background: #fff; /* soft brand blue background */
+  padding: 80px 0;
+}
+
+#misjon .grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Title + Subtitle */
+#misjon h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 32px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+#misjon h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #83b1c8; /* elegant gold tone */
+  margin-bottom: 1em;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+#misjon .subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+
+#misjon p {
+  font-size: 16px;
+  color: #2b3a44;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* Image Frame */
+.image-frame {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Infinite zoom animation */
+.image-frame img {
+  width: 100%;
+  height: auto;
+  transform-origin: center center;
+  animation: zoomInOut 6s ease-in-out infinite;
+  transition: transform 0.5s ease;
+}
+
+@keyframes zoomInOut {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Fix */
+@media (max-width: 980px) {
+  #misjon .grid-2 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  #misjon p {
+    margin: 0 auto;
+  }
+  #misjon .image-frame {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 680px) {
+  .home .hero-content,
+  .home .section .container,
+  .home .footer .container,
+  .home .nav-links {
+    text-align: center;
+  }
+}
+
+/* Footer layout and branding */
+.footer .container.footer-content { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.footer-brand { display: inline-flex; align-items: center; gap: 10px; }
+.footer-logo { height: 36px; width: auto; border-radius: 4px; }
+.footer .brand-name { font-weight: 700; letter-spacing: 0.3px; }
+.footer-links a { font-weight: 600; padding: 6px 10px; border-radius: 8px; transition: background 0.2s ease; }
+.footer-links a:hover { background: rgba(255,255,255,0.12); }
+.footer-credit { opacity: 0.95; }
+.footer-credit a { text-decoration: underline; }
+
+/* Footer mobile centering */
+@media (max-width: 680px) {
+  .footer .container.footer-content { justify-content: center; text-align: center; }
+  .footer-brand { justify-content: center; width: 100%; }
+  .footer-links { justify-content: center; }
+  .footer-credit { width: 100%; margin-top: 8px; }
+}

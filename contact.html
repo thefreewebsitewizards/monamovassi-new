@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soulat Bemanning og Omsorg AS – Kontakt Oss</title>
+  <meta name="description" content="Kvalitet, trygghet og menneskelig engasjement i helse, omsorg og barnevern." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="images/SOULAT.LOGO.jpeg" />
+</head>
+<body class="contact">
+  <!-- Consistent Navbar -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html#hjem" class="logo">
+        <img src="images/SOULAT.LOGO.jpeg" alt="Soulat logo" loading="lazy">
+        <span>SOULAT</span>
+      </a>
+      <nav class="nav-links" aria-label="Hovedmeny">
+        <a href="index.html#hjem">Hjem</a>
+        <a href="index.html#misjon">Misjon</a>
+        <a href="index.html#tjenester">Tjenester</a>
+        <a href="index.html#kandidater-kunder">Kandidater & Oppdragsgivere</a>
+        <a href="index.html#kvalitet">Kvalitet</a>
+        <a href="index.html#visjon">Visjon</a>
+        <a href="contact.html">Kontakt Oss</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Åpne meny">Meny</button>
+    </div>
+  </header>
+
+  <!-- Contact Content -->
+  <main class="contact-wrap">
+    <section class="contact-card" aria-labelledby="title">
+      <h1 id="title">La oss koble oss til</h1>
+      <p class="sub">Hva kan vi hjelpe deg med?</p>
+
+      <form id="contact-form" class="form-grid">
+        <div>
+          <label class="label" for="Fornavn">Fornavn</label>
+          <input class="input" type="text" id="Fornavn" name="Fornavn" placeholder="Jane" required />
+        </div>
+        <div>
+          <label class="label" for="Etternavn">Etternavn</label>
+          <input class="input" type="text" id="Etternavn" name="Etternavn" placeholder="Doe" required />
+        </div>
+        <div class="full">
+          <label class="label" for="E-postadresse">E-postadresse</label>
+          <input class="input" type="email" id="E-postadresse" name="E-postadresse" placeholder="example@domain.com" required />
+        </div>
+        <div class="full">
+          <label class="label" for="Telefonnummer">Telefonnummer</label>
+          <input class="input" type="tel" id="Telefonnummer" name="Telefonnummer" placeholder="123456789" />
+        </div>
+        <div class="full">
+          <label class="label" for="Beskjed">Beskjed</label>
+          <textarea class="textarea" id="Beskjed" name="Beskjed" placeholder="Meldingen din her" required></textarea>
+        </div>
+        <div class="form-actions full">
+          <button class="btn" type="submit">Send melding</button>
+          <span id="form-status" class="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="images/SOULAT.LOGO.jpeg" alt="Soulat Bemanning og Omsorg AS logo" class="footer-logo" loading="lazy" />
+        <span class="brand-name">Soulat Bemanning og Omsorg AS</span>
+      </div>
+      <div class="footer-credit">
+        Built by <a href="https://thefreewebsitewizards.com/?fbclid=PAZXh0bgNhZW0CMTEAAad0Jm-GNlXnPPJ1LVG1DBVBoUGdRHC5m3FFwUqGHjUfujAnDPDhsINN8mAv1A_aem_owWh2qpkEErFPYCqV9cPEg" target="_blank" rel="noopener">The Free Website Wizards</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EmailJS and Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="config/emailjs-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
