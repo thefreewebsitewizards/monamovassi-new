@@ -3,14 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.mobile-toggle');
   const navLinks = document.querySelector('.nav-links');
 
-  // Sticky shrink effect
-  const onScroll = () => {
-    if (!navbar) return;
-    if (window.scrollY > 40) navbar.classList.add('shrink');
-    else navbar.classList.remove('shrink');
-  };
-  window.addEventListener('scroll', onScroll);
-  onScroll();
+  // Static header: disable scroll-based shrink behavior
 
   // Mobile menu toggle
   if (toggle && navLinks) {

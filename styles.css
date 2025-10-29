@@ -14,9 +14,9 @@ img { max-width: 100%; height: auto; display: block; }
 .container { width: 92%; max-width: 1100px; margin: 0 auto; }
 
 /* Navbar */
-.navbar { position: sticky; top: 0; z-index: 1000; background: transparent; transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease; padding: 16px 0; }
+.navbar { position: static; background: transparent; transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease; padding: 16px 0; }
 .navbar.shrink { background: rgba(22,48,67,0.95); padding: 8px 0; box-shadow: 0 6px 28px rgba(0,0,0,0.12); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.nav-inner { position: relative; display: flex; align-items: center; justify-content: space-between; }
 .logo { display: flex; align-items: center; gap: 12px; font-family: 'Poppins', 'Lato', 'Inter', sans-serif; font-weight: 700; letter-spacing: 0.8px; color: var(--primary); }
 .navbar.shrink .logo { color: #fff; }
 .logo img { height: 36px; width: auto; border-radius: 4px; }
