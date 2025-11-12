@@ -155,6 +155,61 @@ img { max-width: 100%; height: auto; display: block; }
 /* Container rhythm adjustments for creative spacing */
 .section .container { padding-top: 4px; }
 
+/* ============================= */
+/* Akutt hjelp — Presentable UI  */
+/* ============================= */
+#akutt-hjelp { background: linear-gradient(180deg, rgba(131,177,200,0.14), rgba(131,177,200,0.08)); border-top: 1px solid #cfe0ea; border-bottom: 1px solid #cfe0ea; }
+
+#akutt-hjelp .akutt-card {
+  background: #fff;
+  border: 1px solid #e6eef3;
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.06);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+#akutt-hjelp .akutt-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 6px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+#akutt-hjelp h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+#akutt-hjelp h2::before {
+  content: "⛑️";
+  display: inline-block;
+  font-size: 24px;
+}
+
+#akutt-hjelp .akutt-body p {
+  margin: 12px 0;
+  position: relative;
+  padding-left: 28px;
+}
+#akutt-hjelp .akutt-body p::before {
+  content: "✔";
+  position: absolute;
+  left: 0; top: 0.1em;
+  color: var(--accent);
+  font-weight: 700;
+}
+#akutt-hjelp .akutt-body p:last-child::before {
+  content: "☎";
+  color: var(--primary);
+}
+
+@media (max-width: 680px) {
+  #akutt-hjelp .akutt-card { padding: 22px 18px; }
+  #akutt-hjelp h2 { font-size: 26px; }
+}
+
 /* Mission subtitle styling */
 #misjon .subheading {
   font-family: 'Poppins', sans-serif;
@@ -320,6 +375,11 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-links a:hover { background: rgba(255,255,255,0.12); }
 .footer-credit { opacity: 0.95; }
 .footer-credit a { text-decoration: underline; }
+
+/* Footer contact icons */
+.footer-contact { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.footer-contact .contact-item { display: inline-flex; align-items: center; gap: 8px; }
+.footer-contact .icon { font-size: 16px; line-height: 1; }
 
 /* Footer mobile centering */
 @media (max-width: 680px) {
