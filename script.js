@@ -91,7 +91,8 @@ if (typeEl) {
           if (statusEl) statusEl.textContent = 'Takk for meldingen! Vi tar kontakt med deg snart.';
           this.reset();
         })
-        .catch(() => {
+        .catch((error) => {
+          console.error('EmailJS Error:', error);
           if (statusEl) statusEl.textContent = 'Noe gikk galt. Vennligst prøv igjen.';
         });
     });

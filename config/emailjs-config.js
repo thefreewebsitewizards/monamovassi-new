@@ -1,4 +1,3 @@
-const EMAILJS_PUBLIC_KEY  = "83ucnPhbgMXHULiXL";                 
-const EMAILJS_SERVICE_ID  = "service_oxw6pmq";  
-const EMAILJS_TEMPLATE_ID = "template_b8xybo8"; 
-
+const EMAILJS_PUBLIC_KEY  = "Uk7h9RF5711jJG86s";                 
+const EMAILJS_SERVICE_ID  = "service_4cfzwrh";  
+const EMAILJS_TEMPLATE_ID = "template_wtdah8n"; 
