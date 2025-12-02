@@ -86,7 +86,33 @@ if (typeEl) {
         return;
       }
       if (statusEl) statusEl.textContent = 'Sender...';
-      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+
+      // Send main email (to admin)
+      const sendAdmin = emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this);
+      
+      // Send confirmation email (to user) if template ID exists
+      if (typeof EMAILJS_CONFIRM_TEMPLATE_ID !== 'undefined' && EMAILJS_CONFIRM_TEMPLATE_ID) {
+         // Prepare explicit parameters to ensure the "To Email" and names work correctly
+         // regardless of whether the template uses default variables or form field names.
+         const formData = new FormData(this);
+         const confirmParams = {
+             to_name: formData.get('Fornavn') + ' ' + formData.get('Etternavn'),
+             to_email: formData.get('E-postadresse'),
+             message: formData.get('Beskjed'),
+             time: new Date().toLocaleString('no-NO'), // Add localized time string
+             // Include original field names as fallback
+             'Fornavn': formData.get('Fornavn'),
+             'Etternavn': formData.get('Etternavn'),
+             'E-postadresse': formData.get('E-postadresse'),
+             'Telefonnummer': formData.get('Telefonnummer'),
+             'Beskjed': formData.get('Beskjed')
+         };
+
+         emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CONFIRM_TEMPLATE_ID, confirmParams)
+            .catch(err => console.error('Confirmation email failed:', err));
+      }
+
+      sendAdmin
         .then(() => {
           if (statusEl) statusEl.textContent = 'Takk for meldingen! Vi tar kontakt med deg snart.';
           this.reset();
